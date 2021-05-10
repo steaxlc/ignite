@@ -5,7 +5,7 @@ import { loadGames } from '../actions/gamesAction';
 //Components
 import Game from '../components/Game'
 import GamesDetail from '../components/GamesDetail'
-import Nav from './components/Nav'
+import Nav from '../components/Nav'
 
 //styling and animation
 import styled from 'styled-components'
