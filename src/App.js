@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       <GlobalStyles />
-      <Route path={['/game/:id', '/']}>
+      <Route path={['/game/:id', '/ignite/']}>
         <Home/>
       </Route>
       
