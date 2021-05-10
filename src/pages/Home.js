@@ -5,6 +5,7 @@ import { loadGames } from '../actions/gamesAction';
 //Components
 import Game from '../components/Game'
 import GamesDetail from '../components/GamesDetail'
+import Nav from './components/Nav'
 
 //styling and animation
 import styled from 'styled-components'
@@ -27,6 +28,8 @@ const Home = () => {
     const {popular, newGames, upComing, searched} = useSelector((state) => state.games);
 
     return (
+        <>
+        <Nav/>
         <GameList variants={fadeIn} initial="hidden" animate="show">
             <AnimateSharedLayout type ='corssfade'>
                 <AnimatePresence>
@@ -85,7 +88,8 @@ const Home = () => {
                 ))}
                 </Games>
                 </AnimateSharedLayout>
-        </GameList>
+            </GameList>
+            </>
     )
 }
 
