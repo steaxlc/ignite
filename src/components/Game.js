@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { loadDetail } from '../actions/detailActions'
 import { Link } from 'react-router-dom'
 
+import {pop} from '../animations'
+
 const Game = ({ name, released, image,id }) => {
     const stringPathId = id.toString();
     const dispatch = useDispatch();
@@ -16,7 +18,9 @@ const Game = ({ name, released, image,id }) => {
     }
 
     return (
-        <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
+        <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}
+        variants={pop} initial="hidden" animate="show"
+        >
             <Link to={`/ignite/game/${id}`}>
                 <motion.h3 >{name}</motion.h3>
                 <p>{released}</p>

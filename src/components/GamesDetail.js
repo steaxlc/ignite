@@ -26,14 +26,18 @@ const GamesDetail = ({pathId}) => {
     //get platform images
     const getPlatform = (platform) => {
         switch (platform) {
-            case "Playstation 4":
+            case "PlayStation 4":
                 return playstation;
+            case "PlayStation 5":
+                    return playstation;
             case "Xbox One":
                 return xbox;
             case "PC":
                 return steam;
-            case "iOS":
+            case "macOS":
                 return apple;
+            case "iOS":
+                    return apple;
             case "Nintendo Switch":
                 return nintendo;
             default:
@@ -106,6 +110,9 @@ const Stats = styled(motion.div)`
     display:flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Media = styled(motion.div)`
@@ -125,6 +132,7 @@ const Detail = styled(motion.div)`
     left: 10%;
     color: black;
     position: absolute;
+    z-index: 10;
     img{
         width:100%;
     }
@@ -138,6 +146,7 @@ const CardShadow = styled(motion.div)`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 5;
     &::-webkit-scrollbar{
         width: 0.5rem;
     }
