@@ -28,9 +28,10 @@ const Home = () => {
     const {popular, newGames, upComing, searched} = useSelector((state) => state.games);
 
     return (
-        <>
-        <Nav/>
+        
+        
         <GameList variants={fadeIn} initial="hidden" animate="show">
+            <Nav/>
             <AnimateSharedLayout type ='corssfade'>
                 <AnimatePresence>
                     {pathId && <GamesDetail pathId={pathId} />}
@@ -88,8 +89,7 @@ const Home = () => {
                 ))}
                 </Games>
                 </AnimateSharedLayout>
-            </GameList>
-            </>
+        </GameList>
     )
 }
 
