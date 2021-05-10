@@ -17,7 +17,7 @@ const Game = ({ name, released, image,id }) => {
 
     return (
         <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
-            <Link to={`/game/${id}`}>
+            <Link to={`/ignite/game/${id}`}>
                 <motion.h3 >{name}</motion.h3>
                 <p>{released}</p>
                 <motion.img layoutId={`image ${stringPathId}`} src={image} alt={name}/>
