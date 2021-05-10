@@ -28,7 +28,7 @@ const Nav = () => {
             type: "CLEAR_SEARCHED",
         })
     }
-
+ 
     return (
         <StyledNav variants={fadeIn} initial="hidden" animate="show">
             <Logo onClick={clearSearched}>
