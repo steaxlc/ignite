@@ -8,9 +8,13 @@ import GamesDetail from '../components/GamesDetail'
 
 //styling and animation
 import styled from 'styled-components'
-import {motion} from 'framer-motion'
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion'
+import {useLocation} from 'react-router-dom'
 
 const Home = () => {
+    //get current location
+    const location = useLocation();
+    const pathId = location.pathname.split("/")[2];
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -22,7 +26,9 @@ const Home = () => {
 
     return (
         <GameList>
-            <GamesDetail/>
+            <AnimateSharedLayout type ='corssfade'>
+                <AnimatePresence>{pathId && <GamesDetail pathId={pathId }/>}</AnimatePresence>
+            
             <h2>Upcoming Games</h2>
             <Games>
                 {upComing.map((game) => (
@@ -58,7 +64,8 @@ const Home = () => {
                         key={game.id}
                     />
                 ))}
-            </Games>
+                </Games>
+                </AnimateSharedLayout>
         </GameList>
     )
 }
